@@ -49,12 +49,13 @@ function NotificationViewModel(model, parent) {
 function NotificationsViewModel(options) {
     var self = this;
     options = options || {};
-    self.url = options.url || '/api/notifications/'; // you may have to use a different url if your route attributes are different
     self.username = options.username || '';
     self.readType = options.readType || 'view';
     if ($.connection && $.connection.notificationMessageHub) { //if signalR is enabled
         self.signalRClient = $.connection.notificationMessageHub.client;
         self.signalRServer = $.connection.notificationMessageHub.server;
+    } else {
+        alert('SignalR not started');
     }
     self.loading = ko.observable(false);
     self.notifications = new ko.observableArray([]);
@@ -67,7 +68,7 @@ function NotificationsViewModel(options) {
         var max = 10;
         var offset = self.notifications().length;
         var fullUrl = self.url + "?username=" + self.username + "&offset=" + offset + "&max=" + max;
-        $.ajax({ type: "GET", url: fullUrl, cache: false, success: self.loadMoreNotificationsCallback, dataType: 'json' });
+        self.signalRServer.getForUser(self.username, offset, max).done(self.loadMoreNotificationsCallback);
     };
     self.loadMoreNotificationsCallback = function (data) {
         if (data.length > 0) {
@@ -87,7 +88,7 @@ function NotificationsViewModel(options) {
         self.loading(false);
     };
     self.markAsRead = function (notification) {
-        $.post(self.url + notification.id + '/read', {});
+        self.signalRServer.markAsRead(notification.id);
         notification.read(true);
     };
     self.markAsReadById = function (id) {

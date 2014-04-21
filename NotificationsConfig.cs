@@ -8,6 +8,9 @@ using System.IO;
 [assembly: OwinStartup(typeof(CAPS.Notifications.Web.NotificationsConfig))]
 namespace CAPS.Notifications.Web
 {
+    /// <summary>
+    /// Startup class automatically used during OWIN startup. Makes sure SignalR is activated and instantiates the CompositionContainer required to find the implementation of INotificationHandler
+    /// </summary>
     public class NotificationsConfig
     {
         public static CompositionContainer Container { get; set; }

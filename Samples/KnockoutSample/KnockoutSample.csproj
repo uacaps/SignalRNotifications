@@ -43,8 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="CAPS.Notifications.Web">
-      <HintPath>..\..\packages\CAPS.Notifications.Web.1.0.1\lib\net\CAPS.Notifications.Web.dll</HintPath>
+    <Reference Include="CAPS.Notifications.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\CAPS.Notifications.Web.1.1.0\lib\net\CAPS.Notifications.Web.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core">
       <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Core.2.0.3\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
@@ -221,10 +222,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
     <Content Include="Views\Shared\_NotificationModal.cshtml" />
     <Content Include="Views\Shared\_NotificationDropdown.cshtml" />
     <Content Include="Views\Shared\_LayoutWithNotifications.cshtml" />
-    <Content Include="Scripts\jquery-2.1.0.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

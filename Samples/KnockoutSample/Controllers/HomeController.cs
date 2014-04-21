@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CAPS.Notifications.Web;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace KnockoutSample.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
             return View();
@@ -25,6 +27,11 @@ namespace KnockoutSample.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public JsonResult SendNotification(string username, string message) 
+        {
+            return Json(true);
         }
     }
 }
