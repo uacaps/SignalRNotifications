@@ -1,8 +1,7 @@
-
 ## Table of Contents
 * [Installation](#installation)
 * [Setup](#setup)
-	* [Implement INotificationHandler](#implement-inotificationhandle)
+	* [Implement INotificationHandler](#implement-inotificationhandler)
 	* [Add CSS and JavaScript References](#add-css-and-javascript-references)
 	* [Add Partial Views](#add-partial-views)
 * [Credits](#credits)
@@ -25,7 +24,7 @@ The Knockout package is optional but recommended if you want to learn how the cl
 
 This setup assumes you have are using both the Core and Knockout Extensions. If you decide to not use Knockout Extensions then you will have to implement your own client-side handling for the notifications
 
-1. **Implement INotificationHandler**
+### Implement INotificationHandler
 
 Somewhere in your site you will have to implement the INotificationHandler interface and export your class using the <code>[Export]</code> attribute. The Knockout Extensions NuGet package automatically includes a sample class in **SampleNotificationHandler.cs**:
 
@@ -64,7 +63,7 @@ public class SampleNotificationHandler : INotificationHandler
 }
 ```
 
-2. **Add CSS and JavaScript References**
+### Add CSS and JavaScript References
 
 The Knockout extensions require the following CSS to be included on the page in order to work properly.
 
@@ -101,7 +100,7 @@ $.connection.hub.start().done(function () {
 	vm.init();
 });
 ```
-3. **Add Partial Views**
+### Add Partial Views
 
 The Knockout extension assumes that Bootstrap is installed. 
 
