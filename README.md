@@ -1,3 +1,5 @@
+![Banner](https://raw.githubusercontent.com/uacaps/ResourceRepo/master/WebNotifications/WebNotificationsBanner.png)
+
 ## Table of Contents
 * [Installation](#installation)
 * [Setup](#setup)
