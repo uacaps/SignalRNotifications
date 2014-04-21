@@ -1,0 +1,24 @@
+﻿<li class="dropdown" id="notifications" data-bind="dropdownShow: function() { if($data.readType == 'view') $data.markAllAsRead(); }">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-warning-sign"></span>
+        <span class="label label-danger" data-bind="visible: unreadNotifications().length > 0, text: unreadNotifications().length"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-right">
+        <li data-bind="visible: loading"><p>Loading...</p></li>
+        <!-- ko foreach: notifications().slice(0, 10) -->
+        <li>
+            <a data-bind="attr: { href: url }, click: go">
+                <img data-bind="attr: { src: image, alt: title }" />
+                <span data-bind="html: title"></span>&nbsp;-&nbsp;
+                <small class="muted" data-bind="text: ageDateString"></small>
+            </a>
+        </li>
+        <!-- /ko -->
+        <li role="presentation" class="divider"></li>
+        <li>
+            <button class="btn btn-primary btn-link" data-toggle="modal" data-target="#notificationsModal">
+                Click to view more
+            </button>
+        </li>
+    </ul>
+</li>

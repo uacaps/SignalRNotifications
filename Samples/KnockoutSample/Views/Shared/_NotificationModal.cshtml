@@ -1,0 +1,22 @@
+﻿<div class="modal fade" id="notificationsModal" tabindex="-1" role="dialog" aria-labelledby="notificationsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="notificationsModalLabel">Notifications</h4>
+            </div>
+            <div class="modal-body">
+                    <ul data-bind="foreach: notifications" class="list-group">
+                        <li class="list-group-item" >
+                                <img data-bind="attr: { src: image, alt: title }" class="pull-left"/>
+                            <a data-bind="attr: { href: url },click: go, html: title"></a><br/>
+                                <span data-bind="html: shortText"></span>&nbsp;-&nbsp;
+                                <small class="muted" data-bind="text: ageDateString"></small>
+                        </li>
+                    </ul>
+                    <p data-bind="visible: loading">Loading...</p>
+                    <button class="btn center-block" data-bind="click: loadMoreNotifications, visible: (!loading() && hasMoreNotifications())" type="button">Load more notifications</button>
+                </div>
+        </div>
+    </div>
+</div>
