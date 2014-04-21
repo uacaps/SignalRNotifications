@@ -4,6 +4,7 @@
 	* [Implement INotificationHandler](#implement-inotificationhandler)
 	* [Add CSS and JavaScript References](#add-css-and-javascript-references)
 	* [Add Partial Views](#add-partial-views)
+	* [Without Knockout Extension](#without-knockout-extension)
 * [Credits](#credits)
 * [License](#license)
 
@@ -124,6 +125,10 @@ You then need to add the notification dialog to the page:
 ```html
 @{Html.RenderPartial("_NotificationModal");}
 ```
+
+### Without Knockout Extension
+
+If you decide not to use the Knockout extension then you will have to make sure your web project includes the [Microsoft.Owin.Host.SystemWeb](https://www.nuget.org/packages/Microsoft.Owin.Host.SystemWeb/) package in order to get the notification hub to automatically start and to bind to a <code>INotificationHandler</code>
 
 ## Credits
 
