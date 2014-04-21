@@ -1,4 +1,4 @@
-![Banner](https://raw.githubusercontent.com/uacaps/ResourceRepo/master/WebNotifications/WebNotificationsBanner.png)
+![Banner](https://raw.githubusercontent.com/uacaps/ResourceRepo/master/SignalRNotifications/SignalRNotificationsBanner.png)
 
 ## Table of Contents
 * [Installation](#installation)
