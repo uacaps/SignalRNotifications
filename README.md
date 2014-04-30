@@ -128,6 +128,11 @@ You then need to add the notification dialog to the page:
 @{Html.RenderPartial("_NotificationModal");}
 ```
 
+The result will look like this:
+![Screnshot1](https://raw.githubusercontent.com/uacaps/ResourceRepo/master/SignalRNotifications/SignalRNotificationsScreenshot1.png)
+
+![Screnshot2](https://raw.githubusercontent.com/uacaps/ResourceRepo/master/SignalRNotifications/SignalRNotificationsScreenshot2.png)
+
 ### Without Knockout Extension
 
 If you decide not to use the Knockout extension then you will have to make sure your web project includes the [Microsoft.Owin.Host.SystemWeb](https://www.nuget.org/packages/Microsoft.Owin.Host.SystemWeb/) package in order to get the notification hub to automatically start and to bind to a <code>INotificationHandler</code>
