@@ -7,6 +7,7 @@
 	* [Add CSS and JavaScript References](#add-css-and-javascript-references)
 	* [Add Partial Views](#add-partial-views)
 	* [Without Knockout Extension](#without-knockout-extension)
+    * [Multiple OWIN Startup Classes](#multiple-owin-startup-classes)
 * [Credits](#credits)
 * [License](#license)
 
@@ -136,6 +137,20 @@ The result will look like this:
 ### Without Knockout Extension
 
 If you decide not to use the Knockout extension then you will have to make sure your web project includes the [Microsoft.Owin.Host.SystemWeb](https://www.nuget.org/packages/Microsoft.Owin.Host.SystemWeb/) package in order to get the notification hub to automatically start and to bind to a <code>INotificationHandler</code>
+
+### Multiple OWIN Startup Classes
+
+If your project has to any OWIN startup actions of its own, then you'll need to give your OwinStartup class its own friendly name and then specify it with the appSetting 
+
+```xml
+<add key="owin:AppStartup" value="MyOwinConfigurationFriendlyName" />
+```
+
+You will also need to invoke the <code>NotificationConfig</code>'s configuration within your own configuration class's <code>Configuration</code> method:
+
+```csharp
+new NotificationsConfig().Configuration(app);
+```
 
 ## Credits
 

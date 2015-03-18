@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.IO;
 
-[assembly: OwinStartup(typeof(CAPS.Notifications.Web.NotificationsConfig))]
+[assembly: OwinStartup("NotificationsConfig", typeof(CAPS.Notifications.Web.NotificationsConfig))]
 namespace CAPS.Notifications.Web
 {
     /// <summary>
